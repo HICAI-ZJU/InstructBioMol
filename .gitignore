@@ -1,0 +1,9 @@
+pretrained_ckpt
+dump
+data
+data-backup
+script
+*.pyc
+.*.npy
+data-old
+.DS_Store

@@ -1,0 +1,67 @@
+# ========= system global ========== #
+debug: false
+max_length: 450 # max length
+logging_step: 64
+
+## ========= LLM ========== #
+llama_ckpt_path: 'pretrained_ckpt/InstructBioMol-base'
+projector_hidden_size: 512
+projector_enc_layer: 2
+projector_dec_layer: 2
+## ========= text-to-molecule alignment tuning ========== #
+
+enc_num_mol_tokens: 8
+num_mol_fp: 1024
+
+## ========= text-to-protein alignment tuning ========== #
+
+enc_num_prot_tokens: 32
+num_prot_fp: 4712
+
+
+dataset_name_list: [
+                     # ==========molecule-text==========
+                    # 'molecule_to_text_pubchem_iupac',
+                    # 'text_to_molecule_pubchem_iupac',
+                    'molecule_to_text_chebi_train',
+                    'text_to_molecule_chebi_train',
+                    # ==========protein-text==========
+                    'protein_to_text_trembl_name',
+                    'protein_to_text_trembl_func',
+                    'protein_to_text_trembl_loc',
+                    'protein_to_text_trembl_family',
+                    'text_to_protein_trembl',
+                    'protein_to_text_swissprot_train_name',
+                    'protein_to_text_swissprot_train_func',
+                    'protein_to_text_swissprot_train_loc',
+                    'protein_to_text_swissprot_train_family',
+                    'text_to_protein_swissprot_train',
+                    # ==========protein-molecule==========
+                    'protein_to_molecule_bindingdb_train',
+                    'molecule_to_protein_gorhea_train',
+                    ]
+dataset_selected_prob: [
+                      # ==========molecule-text==========
+                      # 0.1, #'molecule_to_text_pubchem_iupac',
+                      # 0.1, #'text_to_molecule_pubchem_iupac',
+                      0.001, #'molecule_to_text_chebi_train',
+                      0.001, #'text_to_molecule_chebi_train',
+                      # ==========protein-text==========
+                      0.05, #'protein_to_text_trembl_name',
+                      0.05, #'protein_to_text_trembl_func',
+                      0.05, #'protein_to_text_trembl_loc',
+                      0.05, #'protein_to_text_trembl_family',
+                      0.1, #'text_to_protein_trembl',
+                      0.05, #'protein_to_text_swissprot_train_name',
+                      0.05, #'protein_to_text_swissprot_train_func',
+                      0.05, #'protein_to_text_swissprot_train_loc',
+                      0.05, #'protein_to_text_swissprot_train_family',
+                      0.1, #'text_to_protein_swissprot_train',
+                      # ==========protein-molecule==========
+                      0.05, #'protein_to_molecule_bindingdb_train'
+                      0.05, #'molecule_to_protein_gorhea_train',
+                       ]
+val_dataset_name_list: []
+load_ckpt_path_list: []
+eval_step: 50000
+
