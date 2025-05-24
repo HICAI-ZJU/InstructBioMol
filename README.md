@@ -8,9 +8,9 @@ This repository is the official implementation of [InstructBioMol](https://arxiv
 ### 💡 Brief Introduction
 InstructBioMol is a multimodal large language model designed for biomolecular instruction following. By integrating natural language with biomolecular data, InstructBioMol achieves any-to-any alignment between natural language, molecules, and proteins.
 
-<div style="text-align:center">
-  <img src="./framework.svg" width="85%"/>
-</div>
+<p align="center">
+  <img src="./framework.svg" width="95%"/>
+</p>
 
 ### 🔧 Environment
 
